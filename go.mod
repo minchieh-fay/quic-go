@@ -1,4 +1,4 @@
-module github.com/quic-go/quic-go
+module github.com/minchieh-fay/quic-go
 
 go 1.23
 
@@ -14,6 +14,8 @@ require (
 	golang.org/x/sys v0.23.0
 	golang.org/x/tools v0.22.0
 )
+
+replace github.com/quic-go/quic-go => github.com/minchieh-fay/quic-go v0.0.0
 
 require (
 	github.com/beorn7/perks v1.0.1 // indirect
