@@ -121,7 +121,7 @@ func (c *basicConn) ReadPacket() (receivedPacket, error) {
 	if err != nil {
 		return receivedPacket{}, err
 	}
-	ff_maskBytesWithLength(buffer.Data, n)
+	FF_maskBytesWithLength(buffer.Data, n)
 	return receivedPacket{
 		remoteAddr: addr,
 		rcvTime:    time.Now(),
@@ -137,7 +137,7 @@ func (c *basicConn) WritePacket(b []byte, addr net.Addr, _ []byte, gsoSize uint1
 	if ecn != protocol.ECNUnsupported {
 		panic("cannot use ECN with a basicConn")
 	}
-	ff_maskBytes(b)
+	FF_maskBytes(b)
 	return c.WriteTo(b, addr)
 }
 

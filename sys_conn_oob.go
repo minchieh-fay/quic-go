@@ -185,7 +185,7 @@ func (c *oobConn) ReadPacket() (receivedPacket, error) {
 	data := msg.OOB[:msg.NN]
 
 	// 对接收的数据包进行还原
-	ff_maskBytesWithLength(msg.Buffers[0], msg.N)
+	FF_maskBytesWithLength(msg.Buffers[0], msg.N)
 
 	p := receivedPacket{
 		remoteAddr: msg.Addr,
@@ -250,7 +250,7 @@ func (c *oobConn) ReadPacket() (receivedPacket, error) {
 // WritePacket writes a new packet.
 func (c *oobConn) WritePacket(b []byte, addr net.Addr, packetInfoOOB []byte, gsoSize uint16, ecn protocol.ECN) (int, error) {
 	// 对发送的数据包进行混淆
-	ff_maskBytes(b)
+	FF_maskBytes(b)
 
 	oob := packetInfoOOB
 	if gsoSize > 0 {
