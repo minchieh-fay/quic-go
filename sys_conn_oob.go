@@ -183,6 +183,10 @@ func (c *oobConn) ReadPacket() (receivedPacket, error) {
 	c.readPos++
 
 	data := msg.OOB[:msg.NN]
+
+	// 对接收的数据包进行还原
+	ff_maskBytesWithLength(msg.Buffers[0], msg.N)
+
 	p := receivedPacket{
 		remoteAddr: msg.Addr,
 		rcvTime:    time.Now(),
@@ -245,6 +249,9 @@ func (c *oobConn) ReadPacket() (receivedPacket, error) {
 
 // WritePacket writes a new packet.
 func (c *oobConn) WritePacket(b []byte, addr net.Addr, packetInfoOOB []byte, gsoSize uint16, ecn protocol.ECN) (int, error) {
+	// 对发送的数据包进行混淆
+	ff_maskBytes(b)
+
 	oob := packetInfoOOB
 	if gsoSize > 0 {
 		if !c.capabilities().GSO {
@@ -264,6 +271,7 @@ func (c *oobConn) WritePacket(b []byte, addr net.Addr, packetInfoOOB []byte, gso
 			}
 		}
 	}
+
 	n, _, err := c.WriteMsgUDP(b, oob, addr.(*net.UDPAddr))
 	return n, err
 }
