@@ -6,11 +6,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/quic-go/quic-go/internal/flowcontrol"
-	"github.com/quic-go/quic-go/internal/mocks"
-	"github.com/quic-go/quic-go/internal/protocol"
-	"github.com/quic-go/quic-go/internal/qerr"
-	"github.com/quic-go/quic-go/internal/wire"
+	"github.com/minchieh-fay/quic-go/internal/flowcontrol"
+	"github.com/minchieh-fay/quic-go/internal/mocks"
+	"github.com/minchieh-fay/quic-go/internal/protocol"
+	"github.com/minchieh-fay/quic-go/internal/qerr"
+	"github.com/minchieh-fay/quic-go/internal/wire"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

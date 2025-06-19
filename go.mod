@@ -6,6 +6,7 @@ require (
 	github.com/francoispqt/gojay v1.2.13
 	github.com/prometheus/client_golang v1.19.1
 	github.com/quic-go/qpack v0.5.1
+	github.com/quic-go/quic-go v0.0.0-00010101000000-000000000000
 	github.com/stretchr/testify v1.9.0
 	go.uber.org/mock v0.5.0
 	golang.org/x/crypto v0.26.0
@@ -14,8 +15,6 @@ require (
 	golang.org/x/sys v0.23.0
 	golang.org/x/tools v0.22.0
 )
-
-replace github.com/quic-go/quic-go => github.com/minchieh-fay/quic-go v0.0.0
 
 require (
 	github.com/beorn7/perks v1.0.1 // indirect

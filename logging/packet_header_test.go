@@ -3,9 +3,9 @@ package logging_test
 import (
 	"testing"
 
-	"github.com/quic-go/quic-go/internal/protocol"
-	"github.com/quic-go/quic-go/internal/wire"
-	"github.com/quic-go/quic-go/logging"
+	"github.com/minchieh-fay/quic-go/internal/protocol"
+	"github.com/minchieh-fay/quic-go/internal/wire"
+	"github.com/minchieh-fay/quic-go/logging"
 	"github.com/stretchr/testify/require"
 )
 

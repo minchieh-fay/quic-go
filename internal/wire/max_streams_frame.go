@@ -3,8 +3,8 @@ package wire
 import (
 	"fmt"
 
-	"github.com/quic-go/quic-go/internal/protocol"
-	"github.com/quic-go/quic-go/quicvarint"
+	"github.com/minchieh-fay/quic-go/internal/protocol"
+	"github.com/minchieh-fay/quic-go/quicvarint"
 )
 
 // A MaxStreamsFrame is a MAX_STREAMS frame
